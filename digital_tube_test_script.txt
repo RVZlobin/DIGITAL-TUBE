@@ -1,0 +1,40 @@
+add wave -position insertpoint  \
+sim:/digital_tube/clock_freq \
+sim:/digital_tube/update_freq \
+sim:/digital_tube/data_bus_width \
+sim:/digital_tube/clk \
+sim:/digital_tube/reset \
+sim:/digital_tube/data \
+sim:/digital_tube/seg \
+sim:/digital_tube/segment0 \
+sim:/digital_tube/segment1 \
+sim:/digital_tube/segment2 \
+sim:/digital_tube/segment3 \
+sim:/digital_tube/freq \
+sim:/digital_tube/curent_segment \
+sim:/digital_tube/wire_hex0 \
+sim:/digital_tube/wire_hex1 \
+sim:/digital_tube/wire_hex2 \
+sim:/digital_tube/wire_hex3 \
+sim:/digital_tube/wire_seg0 \
+sim:/digital_tube/wire_seg1 \
+sim:/digital_tube/wire_seg2 \
+sim:/digital_tube/wire_seg3 \
+sim:/digital_tube/wire_data_in \
+sim:/digital_tube/wire_tx_start \
+sim:/digital_tube/wire_das_clk \
+sim:/digital_tube/wire_fix \
+sim:/digital_tube/wire_das_reset \
+sim:/digital_tube/wire_dc_bit_x \
+sim:/digital_tube/wire_dc_bit_y_x_0 \
+sim:/digital_tube/wire_dc_bit_y_x_1 \
+sim:/digital_tube/wire_dc_bit_y_x_2 \
+sim:/digital_tube/wire_clk_0_1 \
+sim:/digital_tube/wire_clk_1_2 \
+sim:/digital_tube/wire_clk_2_3
+
+force -freeze sim:/digital_tube/clk 1 0, 0 {10000 ps} -r {20 ns}
+
+force -freeze sim:/digital_tube/data 11110000001111 0
+run 800 ns
+run 800 ns
